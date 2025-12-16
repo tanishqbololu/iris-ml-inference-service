@@ -1,0 +1,10 @@
+service: "service:IrisService"
+
+models:
+  - iris_clf:latest
+
+python:
+  packages:
+    - bentoml
+    - scikit-learn
+    - numpy

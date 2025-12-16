@@ -1,0 +1,53 @@
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# -----------------------
+# Virtual Environments
+# -----------------------
+venv/
+.venv/
+env/
+ENV/
+
+# -----------------------
+# OS / Editor
+# -----------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# -----------------------
+# BentoML
+# -----------------------
+.bentoml/
+bento/
+*.bento
+
+# -----------------------
+# Jupyter / Notebooks
+# -----------------------
+.ipynb_checkpoints/
+
+# -----------------------
+# Logs / Temp
+# -----------------------
+*.log
+*.tmp
+
+# -----------------------
+# Docker (local artifacts)
+# -----------------------
+*.tar
+
+notes.txt
