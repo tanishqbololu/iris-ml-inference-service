@@ -1,6 +1,3 @@
-# iris-ml-inference-service
-Production-ready ML inference service built with BentoML and Docker.
-
 # Iris ML Inference Service
 
 Production-ready machine learning inference service for Iris flower classification,
@@ -43,68 +40,71 @@ containerized API suitable for real-world deployment.
 ## 📁 Project Structure
 
 iris-ml-inference-service/
+
 ├── service.py # BentoML service definition (API)
+
 ├── train.py # Model training and saving script
+
 ├── test.py # Model testing
+
 ├── bentofile.yaml # Bento build configuration
+
 ├── requirements.txt
+
 ├── README.md
+
 └── .gitignore
 
 ## ▶️ Run Locally (Development)
 
 Serve directly from source code:
-
 ```bash
-bentoml serve service:IrisService --reload ```
+bentoml serve service:IrisService --reload
+```
 
-Swagger UI will be available at: http://localhost:3000
+Swagger UI will be available at:
+http://localhost:3000
 
+To stop the server, press CTRL + C.
 
-# Docker
-🐳 Run with Docker
-Build the Bento
+---
 
+## 🐳 Run with Docker
+
+1) Build the Bento
 ```bash
 bentoml build
-
-2. Create Docker image
+```
+2) Create Docker image
 ```bash
 bentoml containerize iris_classifier:latest
-
-3. Run container
+```
+3) Run the container
 ```bash
 docker run -p 3000:3000 iris_classifier:latest
+```
+---
 
-🔍 Test the API
+## 🔍 Test the API
 ```bash
 curl -X POST http://localhost:3000/classify \
--H "Content-Type: application/json" \
--d "[[5.1, 3.5, 1.4, 0.2]]"
+  -H "Content-Type: application/json" \
+  -d "[[5.1, 3.5, 1.4, 0.2]]"
+```
+Example response: [0]
 
-
-Example response:
-```bash
-[0]
 
 📈 Production Notes
 
-Models and dependencies are versioned using BentoML
-
-Docker image is portable across environments
-
-Suitable for deployment on cloud VMs, Kubernetes, or managed platforms
-
-Health check and metrics endpoints are available out of the box
+* Models and dependencies are versioned using BentoML
+* Docker image is portable across environments
+* Suitable for deployment on cloud VMs, Kubernetes, or managed platforms
+* Health check and metrics endpoints are available out of the box
 
 🧩 Future Improvements
 
-Input validation and schema enforcement
-
-Batch inference endpoint
-
-Authentication and rate limiting
-
-Cloud deployment (AWS / Azure / GCP)
-
-Monitoring and logging integration
+* Input validation and schema enforcement
+* Batch inference endpoint
+* Authentication and rate limiting
+* Cloud deployment (AWS / Azure / GCP)
+* Monitoring and logging integration
